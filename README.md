@@ -1,10 +1,10 @@
 # Batalha Naval
 
-Projeto do desafio de programação em C - Ní­vel Novato
+Projeto do desafio de programação em C - Ní­vel Aventureiro
 
 ## Descrição
 
-Este é um programa em C que cria um tabuleiro de batalha naval e posiciona dois navios nele. Um navio é colocado na horizontal e outro na vertical.
+Este é um programa em C que cria um tabuleiro de batalha naval e posiciona quatro navios nele. Dois navios são colocados de forma tradicional (horizontal e vertical) e dois navios são posicionados na diagonal.
 
 ## Como Funciona
 
@@ -12,9 +12,11 @@ O programa cria um tabuleiro 10x10 usando uma matriz. Cada posição pode ter:
 - 0 = água
 - 3 = navio
 
-Dois navios de tamanho 3 são posicionados:
-- Navio 1: horizontal, linha 2, começando na coluna 3
+Quatro navios de tamanho 3 são posicionados:
+- Navio 1: horizontal, linha 2, começando na coluna 1
 - Navio 2: vertical, coluna 7, começando na linha 5
+- Navio 3: diagonal descendente, começando na posição (0,5)
+- Navio 4: diagonal ascendente, começando na posição (9,0)
 
 ## Compilação e Execução
 
@@ -35,57 +37,51 @@ Para executar:
 - Compilador GCC
 - Sistema operacional Linux, macOS ou Windows com MinGW
 
-## Exemplo de Saída
+## Exemplo de Saí­da
 
 ```
-====================================
-   BATALHA NAVAL - NÍVEL INICIANTE  
-====================================
+Tabuleiro de Batalha Naval:
 
-Posicionando Navio 1 (Horizontal)...
-Navio 1 posicionado com sucesso na linha 2, coluna 3 (Horizontal)
+0 0 0 0 0 3 0 0 0 0 
+0 0 0 0 0 0 3 0 0 0 
+0 3 3 3 0 0 0 3 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 3 0 0 
+0 0 0 0 0 0 0 3 0 0 
+0 0 3 0 0 0 0 3 0 0 
+0 3 0 0 0 0 0 0 0 0 
+3 0 0 0 0 0 0 0 0 0 
 
-Posicionando Navio 2 (Vertical)...
-Navio 2 posicionado com sucesso na linha 5, coluna 7 (Vertical)
-
-=== TABULEIRO DO BATALHA NAVAL ===
-
-    0  1  2  3  4  5  6  7  8  9 
- 0  0  0  0  0  0  0  0  0  0  0 
- 1  0  0  0  0  0  0  0  0  0  0 
- 2  0  0  0  3  3  3  0  0  0  0 
- 3  0  0  0  0  0  0  0  0  0  0 
- 4  0  0  0  0  0  0  0  0  0  0 
- 5  0  0  0  0  0  0  0  3  0  0 
- 6  0  0  0  0  0  0  0  3  0  0 
- 7  0  0  0  0  0  0  0  3  0  0 
- 8  0  0  0  0  0  0  0  0  0  0 
- 9  0  0  0  0  0  0  0  0  0  0 
-
-Legenda: 0 = Áagua | 3 = Navio
+Legenda: 0 = Água | 3 = Navio
 ```
 
 ## Estrutura do Código
 
-O programa possui as seguintes funções principais:
+O programa utiliza:
 
-- `inicializarTabuleiro()` - Preenche o tabuleiro com zeros
-- `posicionarNavio()` - Coloca um navio no tabuleiro
-- `posicaoValida()` - Verifica se o navio cabe no tabuleiro
-- `verificarSobreposicao()` - Checa se há navios sobrepostos
-- `exibirTabuleiro()` - Mostra o tabuleiro na tela
-- `main()` - Funçõo principal que executa o programa
+- Matriz bidimensional `tabuleiro[TAM][TAM]` para representar o campo de jogo
+- Constantes definidas com `#define` (TAM, AGUA, NAVIO)
+- Loops aninhados para inicialização e exibição
+- Posicionamento manual dos navios
 
 ## Conceitos Utilizados
 
 - Matrizes bidimensionais
 - Loops for aninhados
-- Funções com passagem de parÃ¢metros
-- Validação de dados
 - Uso de constantes com define
+- Posicionamento diagonal em matrizes
+- Manipulação de í­ndices de arrays
+
+## Diferenciais do Nível Aventureiro
+
+- Implementação de navios na diagonal
+- Tabuleiro completo 10x10
+- Quatro navios simultâneos sem sobreposição
+- Posicionamento em múltiplas direções
 
 ## Autor
 
 - Felipe de Lima
 
-*Desenvolvido como parte do desafio de programação em C*****
+*Desenvolvido como parte do desafio de programação em C - Ní­vel Aventureiro*
